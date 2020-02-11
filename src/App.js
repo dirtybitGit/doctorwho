@@ -1,26 +1,44 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import axios from "axios";
+import "./Epinfo";
+import "./App.css";
+import Epinfo from "./Epinfo";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  state = {
+    eplist: [],
+    page: 1,
+    limit: 30,
+    DataCnt: 30,
+    torrents_count: 0
+  };
+
+  componentDidMount() {
+    this.getEpList();
+  }
+
+  getEpList = async () => {
+    const {
+      data: { torrents, torrents_count }
+    } = await axios.get("https://eztv.io/api/get-torrents?imdb_id=0436992");
+    this.setState({
+      eplist: [...this.state.eplist, ...torrents],
+      torrents_count
+    });
+    console.log(this.state.eplist);
+  };
+
+  render() {
+    const { eplist, page, limit, DataCnt, torrents_count } = this.state;
+    return (
+      <div>
+        <div>전체 파일 수 : {torrents_count}</div>
+        {eplist.map(ep => (
+          <Epinfo ep={ep}></Epinfo>
+        ))}
+      </div>
+    );
+  }
 }
 
 export default App;
