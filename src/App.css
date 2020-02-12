@@ -29,6 +29,7 @@ body {
 .epInfo__download {
   /* background: url(./images/download_11.png) top left no-repeat; */
   padding-right: 10px;
+  padding-left: 10px;
 }
 
 .epInfo__poster {
@@ -53,4 +54,8 @@ body {
 .epInfo__epNumber {
   padding-left: 5px;
   font-weight: normal;
+}
+
+.epInfo_linkarea {
+  margin-top: 10px;
 }

@@ -104,10 +104,10 @@ function Epinfo({ ep }) {
         </div>
         <div className="epInfo__infoText">
           {ep.filename}
-          <span>({megaSizeString})</span>
-          <span>{relDateString}</span>
+          <span className="epInfo__epNumber">({megaSizeString})</span>
+          <span className="epInfo__epNumber">{relDateString}</span>
         </div>
-        <div>
+        <div className="epInfo_linkarea">
           <a
             href={ep.magnet_url}
             className="epInfo__magnet"
@@ -115,13 +115,11 @@ function Epinfo({ ep }) {
             title="마그넷 링크"
           >
             {/* <img src={magnetImg} /> */}
-            <button>마크넷 링크</button>
+            <button>마그넷 링크 다운</button>
           </a>
           <CopyToClipboard text={ep.magnet_url} onCopy={onClipCopy}>
-            <button>마그넷 링크 복사하기</button>
+            <button>마그넷 링크 복사</button>
           </CopyToClipboard>
-        </div>
-        <div>
           <a
             href={ep.torrent_url}
             className="epInfo__download"
@@ -132,7 +130,7 @@ function Epinfo({ ep }) {
             <button>토렌트 파일 링크</button>
           </a>
           <CopyToClipboard text={ep.torrent_url} onCopy={onClipCopy}>
-            <button>토렌트 파일 링크 복사하기</button>
+            <button>토렌트 링크 복사</button>
           </CopyToClipboard>
         </div>
       </div>
