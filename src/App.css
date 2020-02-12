@@ -1,0 +1,22 @@
+.epInfo {
+  padding-bottom: 15px;
+  display: flex;
+}
+
+.epInfo__magnet {
+  /* background-image: url(./images/magnet-icon-5.png) top left no-repeat; */
+  padding-right: 10px;
+}
+
+.epInfo__download {
+  /* background: url(./images/download_11.png) top left no-repeat; */
+  padding-right: 10px;
+}
+
+.epInfo__poster {
+  /* display: flex; */
+}
+
+.epInfo__container {
+  padding-left: 10px;
+}
