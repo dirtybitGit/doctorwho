@@ -71,8 +71,22 @@ function Epinfo({ ep }) {
     infoString = "";
   }
 
-  var megaSizeString = Math.floor(ep.size_bytes / 1024);
+  var megaSizeString =
+    Math.floor(ep.size_bytes / 1024 / 1024) > 1000
+      ? Math.floor(ep.size_bytes / 1024 / 1024 / 1024).toFixed(1) + "G"
+      : Math.floor(ep.size_bytes / 1024 / 1024) + "M";
 
+  var relDate = new Date(ep.date_released_unix * 1000);
+  var relDateString =
+    relDate.getFullYear() +
+    "-" +
+    (relDate.getMonth() + 1 > 10
+      ? (relDate.getMonth() + 1).toString()
+      : "0" + (relDate.getMonth() + 1)) +
+    "-" +
+    (relDate.getDate() > 10
+      ? relDate.getDate().toString()
+      : "0" + relDate.getDate().toString());
   return (
     <div className="epInfo">
       <img
@@ -84,14 +98,14 @@ function Epinfo({ ep }) {
       <div className="epInfo__container">
         <div className="epInfo__title">
           {titleString}
-          <span>
+          <span className="epInfo__infoText epInfo__epNumber">
             {ep.season}시즌 {ep.episode}화 {infoString}
           </span>
         </div>
-        <div>
+        <div className="epInfo__infoText">
           {ep.filename}
           <span>({megaSizeString})</span>
-          <span>{megaSizeString}</span>
+          <span>{relDateString}</span>
         </div>
         <div>
           <a
@@ -100,7 +114,8 @@ function Epinfo({ ep }) {
             alt="마그넷 링크"
             title="마그넷 링크"
           >
-            <img src={magnetImg} />
+            {/* <img src={magnetImg} /> */}
+            <button>마크넷 링크</button>
           </a>
           <CopyToClipboard text={ep.magnet_url} onCopy={onClipCopy}>
             <button>마그넷 링크 복사하기</button>
@@ -113,7 +128,8 @@ function Epinfo({ ep }) {
             alt="토렌트 파일 링크"
             title="토렌트 파일 링크"
           >
-            <img src={torrentImg} />
+            {/* <img src={torrentImg} /> */}
+            <button>토렌트 파일 링크</button>
           </a>
           <CopyToClipboard text={ep.torrent_url} onCopy={onClipCopy}>
             <button>토렌트 파일 링크 복사하기</button>
