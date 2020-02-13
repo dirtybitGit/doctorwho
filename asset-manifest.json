@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/doctorwho/static/css/main.bf1cce6b.chunk.css",
+    "main.js": "/doctorwho/static/js/main.926cf465.chunk.js",
+    "main.js.map": "/doctorwho/static/js/main.926cf465.chunk.js.map",
+    "runtime-main.js": "/doctorwho/static/js/runtime-main.56628039.js",
+    "runtime-main.js.map": "/doctorwho/static/js/runtime-main.56628039.js.map",
+    "static/js/2.c9721b3a.chunk.js": "/doctorwho/static/js/2.c9721b3a.chunk.js",
+    "static/js/2.c9721b3a.chunk.js.map": "/doctorwho/static/js/2.c9721b3a.chunk.js.map",
+    "index.html": "/doctorwho/index.html",
+    "precache-manifest.cde334ab640dab5e18c54e81619f395a.js": "/doctorwho/precache-manifest.cde334ab640dab5e18c54e81619f395a.js",
+    "service-worker.js": "/doctorwho/service-worker.js",
+    "static/css/main.bf1cce6b.chunk.css.map": "/doctorwho/static/css/main.bf1cce6b.chunk.css.map",
+    "static/js/2.c9721b3a.chunk.js.LICENSE.txt": "/doctorwho/static/js/2.c9721b3a.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.56628039.js",
+    "static/js/2.c9721b3a.chunk.js",
+    "static/css/main.bf1cce6b.chunk.css",
+    "static/js/main.926cf465.chunk.js"
+  ]
+}
