@@ -1,7 +1,5 @@
 import React from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
-import magnetImg from "./images/magnet-icon-5.png";
-import torrentImg from "./images/download_11.png";
 
 function onClipCopy(text, result) {
   if (result) {
@@ -35,6 +33,7 @@ function Epinfo({ ep }) {
     "-PHOENiX",
     "iP",
     "AAC2",
+    "h264",
     "264",
     "-MTB",
     "-BRISK",
@@ -44,7 +43,19 @@ function Epinfo({ ep }) {
     "-FoV",
     "Av",
     "Kolos",
-    "-KETTLE"
+    "-KETTLE",
+    "XviD",
+    "-AFG",
+    "WEB",
+    "-RiVER",
+    "-TBS",
+    "-CREED",
+    "-MORiTZ",
+    "PROPER",
+    "-TLA",
+    "-SERIOUSLY",
+    "-TASTETV",
+    "RERIP"
   ];
 
   const imgRoot = "https://eztv.io/ezimg/thumbs/";
@@ -102,36 +113,36 @@ function Epinfo({ ep }) {
             {ep.season}시즌 {ep.episode}화 {infoString}
           </span>
         </div>
-        <div className="epInfo__infoText">
-          {ep.filename}
-          <span className="epInfo__epNumber">({megaSizeString})</span>
-          <span className="epInfo__epNumber">{relDateString}</span>
-        </div>
-        <div className="epInfo_linkarea">
-          <a
-            href={ep.magnet_url}
-            className="epInfo__magnet"
-            alt="마그넷 링크"
-            title="마그넷 링크"
-          >
-            {/* <img src={magnetImg} /> */}
-            <button>마그넷 링크 다운</button>
-          </a>
-          <CopyToClipboard text={ep.magnet_url} onCopy={onClipCopy}>
-            <button>마그넷 링크 복사</button>
-          </CopyToClipboard>
-          <a
-            href={ep.torrent_url}
-            className="epInfo__download"
-            alt="토렌트 파일 링크"
-            title="토렌트 파일 링크"
-          >
-            {/* <img src={torrentImg} /> */}
-            <button>토렌트 파일 링크</button>
-          </a>
-          <CopyToClipboard text={ep.torrent_url} onCopy={onClipCopy}>
-            <button>토렌트 링크 복사</button>
-          </CopyToClipboard>
+        <div className="epInfo__infoText">파일명 : {ep.filename}</div>
+        <div className="epInfo__infoText">용량 : {megaSizeString}</div>
+        <div className="epInfo__infoText">업로드 일자 : {relDateString}</div>
+        <div className="epInfo__link">
+          <div className="epInfo_linkarea">
+            <a
+              href={ep.magnet_url}
+              className="epInfo__magnet"
+              alt="마그넷 링크"
+              title="마그넷 링크"
+            >
+              <button>마그넷 링크 다운</button>
+            </a>
+            <CopyToClipboard text={ep.magnet_url} onCopy={onClipCopy}>
+              <button>마그넷 링크 복사</button>
+            </CopyToClipboard>
+          </div>
+          <div className="epInfo_linkarea">
+            <a
+              href={ep.torrent_url}
+              className="epInfo__download"
+              alt="토렌트 파일 링크"
+              title="토렌트 파일 링크"
+            >
+              <button>토렌트 파일 링크</button>
+            </a>
+            <CopyToClipboard text={ep.torrent_url} onCopy={onClipCopy}>
+              <button>토렌트 링크 복사</button>
+            </CopyToClipboard>
+          </div>
         </div>
       </div>
     </div>

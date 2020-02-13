@@ -4,41 +4,52 @@
 
 body {
   background-color: #eff3f7;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.container {
+  margin-top: 1rem;
+  margin-left: 0.5rem;
+  padding-right: 1.2rem;
+  width: 100%;
 }
 
 .epInfo {
-  margin-bottom: 45px;
-  margin-left: 5px;
-
+  margin-top: 1rem;
   padding-top: 10px;
   padding-bottom: 10px;
   padding-left: 10px;
-  width: 95%;
+  width: 100%;
   background-color: white;
   display: flex;
+  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   border-radius: 5px;
   box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25),
     0 8px 16px -8px rgba(0, 0, 0, 0.3), 0 -6px 16px -6px rgba(0, 0, 0, 0.025);
 }
 
-.epInfo__magnet {
-  /* background-image: url(./images/magnet-icon-5.png) top left no-repeat; */
-  padding-right: 10px;
+/* .epInfo__magnet {
+   padding-right: 10px;
 }
 
 .epInfo__download {
-  /* background: url(./images/download_11.png) top left no-repeat; */
-  padding-right: 10px;
-  padding-left: 10px;
-}
+   padding-right: 10px;
+} */
 
 .epInfo__poster {
   box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 0.25),
     0 18px 36px -18px rgba(0, 0, 0, 0.3), 0 -12px 36px -8px rgba(0, 0, 0, 0.025);
+  /* display: inline; */
+  width: 250px;
+  height: auto;
 }
 
 .epInfo__container {
   padding-left: 10px;
+  width: 610px;
 }
 
 .epInfo__infoText {
@@ -57,5 +68,23 @@ body {
 }
 
 .epInfo_linkarea {
-  margin-top: 10px;
+  margin-top: 0.5rem;
+}
+
+.epInfo__link {
+  display: flex;
+  flex-flow: wrap;
+}
+
+.epInfo__link button {
+  margin-right: 0.5rem;
+  /* margin-top: 0.5rem; */
+}
+
+.loader {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
